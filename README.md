@@ -39,4 +39,4 @@ nome = **string**
 
 | code   | Descrição      | Tipo retorno                           |
 | :---------- | :--------- | :---------------------------------- |
-| default | Cadastro realizado com sucesso | |
+| 200 | Cadastro realizado com sucesso | |
