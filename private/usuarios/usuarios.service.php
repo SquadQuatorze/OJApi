@@ -14,7 +14,7 @@
 
       $query = "insert into tb_usuarios 
               (nome_usuario, email_usuario, senha_usuario) values 
-              (:nome_usuario, :email_usuario, :senha_usuario)";
+              (:nome_usuario, :email_usuario, :senha_usuario);";
       $stmt = $this->conexao->prepare($query);
       $stmt->bindValue('nome_usuario', $this->usuario->__get('nome_usuario'));
       $stmt->bindValue('email_usuario', $this->usuario->__get('email_usuario'));
@@ -25,14 +25,30 @@
 
     }
 
-    public function buscar(){
+    public function buscarUsuarios(){
 
-      $query = "select * from tb_usuarios";
+      $query = "select 
+                id_usuario, email_usuario, nome_usuario, fk_id_tipousuario 
+                from tb_usuarios;";
       $stmt = $this->conexao->prepare($query);
       $stmt->execute();
       $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       return $usuarios;
+    }
+
+    public function buscarPorEmail(){
+
+      $query = "select 
+                id_usuario, email_usuario, nome_usuario 
+                from tb_usuarios
+                where email_usuario = :email_usuario;";
+      $stmt = $this->conexao->prepare($query);
+      $stmt->bindValue(':email_usuario', $this->usuario->__get('email_usuario'));
+      $stmt->execute();
+
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     }
 
 
