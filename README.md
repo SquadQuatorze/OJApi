@@ -53,7 +53,7 @@ nome = **string**
 
 | Parâmetro   | Tipo de Dados      | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
-| 'email' | 'string' | **Opcional**. Se enviado retorna usuário específico |
+| email | string | **Opcional**. Se enviado retorna usuário específico |
 
 Request Body
 
@@ -74,4 +74,4 @@ email = **string**
 | code   | Descrição      | Tipo retorno                           |
 | :---------- | :--------- | :---------------------------------- |
 | 200 | Lista com todos os usuários cadastrados | JSON |
-| 200 | Lista com usuários específco | JSON |
+| 200 | Lista com usuário específco | JSON |
