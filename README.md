@@ -4,9 +4,13 @@ Criação de API que servirá a plataforma de estudos intuitiva com foco em dese
 
 ## Documentação da API
 
+### 🔗 Link API
+
+https://geraldoalves.dev/OJ
+
 ### Usuarios
 
-#### Cria um usuário novo
+#### Cria um novo usuário
 
 #### Resquest
 
@@ -39,7 +43,8 @@ nome = **string**
 
 | code   | Descrição      | Tipo retorno                           |
 | :---------- | :--------- | :---------------------------------- |
-| 200 | Cadastro realizado com sucesso | |
+| 200 | Cadastro realizado com sucesso | text/html |
+| 200 | Email já cadastrado | text/html |
 
 #### Recupera usuários cadastrados
 
@@ -51,25 +56,9 @@ nome = **string**
 
 | Parâmetro   | Tipo de Dados      | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
-| email | string | **Opcional**. Se enviado retorna usuário específico |
-
-Request Body
-
-##### application/json
-
-```javascript
-{
-  "email": "email@email.com"
-}
-```
-
-##### application/x-www-form-url-encoded
-
-email = **string**  
 
 #### Response
 
 | code   | Descrição      | Tipo retorno                           |
 | :---------- | :--------- | :---------------------------------- |
 | 200 | Lista com todos os usuários cadastrados | JSON |
-| 200 | Lista com usuário específco | JSON |
